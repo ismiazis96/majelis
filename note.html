@@ -1,0 +1,26 @@
+misal validasi kek gini han <?php if($this->session->userdata('access')=='1'):?>
+
+logic simplenya gini,
+
+user login 
+jika user ditemukan, maka akan dibuatkan session
+isi session[login = true, useraname, hak_level]
+
+nah nanti si hak leve ini yang dibuat validasi akses aauthor
+misalkan author cuma bisa akses menu dashboard sama report aja, nanti tinggal dibuat validasi aja
+
+<ol>
+1 = admin, 2 = author
+if($this->session->userdata('hak_level')=='1'))
+{
+	<li>dashboard</li>
+	<li>Report</li>
+	<li>Settiing</li>
+	} else {
+		<li>dashboard</li>
+	<li>Report</li>
+	}
+	
+</ol>
+
+kurang lenbih validasinya kaya gitu
