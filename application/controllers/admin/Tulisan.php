@@ -170,4 +170,24 @@ class Tulisan extends CI_Controller{
 		redirect('admin/tulisan');
 	}
 
+	function nonaktifkan(){
+		if($this->session->userdata('akses')=='1'){
+			$kode=$this->input->post('kode');
+			$this->m_tulisan->update_status_nonaktif($kode);
+			redirect('admin/tulisan');
+		} else {
+			echo "Halaman tidak ditemukan";
+		}
+	}
+
+	function aktif(){
+		if($this->session->userdata('akses')=='1'){
+			$kode=$this->input->post('kode');
+			$this->m_tulisan->update_status_aktif($kode);
+			redirect('admin/tulisan');
+		} else {
+			echo "Halaman tidak ditemukan";
+		}
+	}
+
 }

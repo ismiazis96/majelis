@@ -14,7 +14,7 @@
 <body>
     <!--============================= HEADER =============================-->
     <!-- TOPBAR -->
-   <?php 
+<?php 
 $this->load->view('depan/v_topbar');
  ?>
 
@@ -88,14 +88,11 @@ $this->load->view('depan/v_navbar');
 <section class="clearfix about about-style2">
     <div class="container">
         <div class="row">
-            <div class="col-md-8" data-aos="fade-right"
-              data-aos-delay="100">
+            <div class="col-md-8" data-aos="fade-right" data-aos-delay="100">
                <h2>Welcome</h2>
-               <p>Kami Menyambut baik terbitnya Website Majelis Ta'lim yang baru , dengan harapan dipublikasinya website ini kami berharap : Peningkatan layanan Informasi kepada anggota kami sendiri, para orangtua, dan masyarakat pada umumnya semakin meningkat. </p>
-
+               <p>Kami Menyambut baik terbitnya Website Majelis Ta'lim yang baru, dengan harapan dipublikasinya website ini kami berharap : Peningkatan layanan Informasi kepada anggota kami sendiri, para orangtua, dan masyarakat pada umumnya semakin meningkat.</p>
             </div>
-            <div class="col-md-4" data-aos="fade-left"
-              data-aos-delay="100">
+            <div class="col-md-4" data-aos="fade-left" data-aos-delay="100">
                 <img src="<?php echo base_url().'theme/images/welcome_1.svg'?>" class="img-fluid about-img" alt="#">
             </div>
         </div>
@@ -223,9 +220,9 @@ $this->load->view('depan/v_navbar');
 </div>
 <!--//END DETAILED CHART -->
 <!--============================= FOOTER =============================-->
-    <?php 
-    $this->load->view('depan/v_footer');
-     ?>
+<?php 
+$this->load->view('depan/v_footer');
+ ?>
         <!--//END FOOTER -->
         <!-- jQuery, Bootstrap JS. -->
         <?php $this->load->view('depan/v_js'); ?>

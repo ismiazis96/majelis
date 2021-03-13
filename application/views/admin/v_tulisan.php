@@ -70,6 +70,10 @@
       					<th>Author</th>
       					<th>Baca</th>
                     <th>Kategori</th>
+                    <?php if($this->session->userdata('akses') == '1') { ?>
+                <th>Status</th>
+                    <th style="text-align:right;">Aksi Status</th>
+                    <?php } ?>    
                     <th style="text-align:right;">Aksi</th>
                 </tr>
                 </thead>
@@ -87,6 +91,7 @@
           					   $tulisan_views=$i['tulisan_views'];
                        $kategori_id=$i['tulisan_kategori_id'];
                        $kategori_nama=$i['tulisan_kategori_nama'];
+                       $tulisan_status=$i['tulisan_status'];
 
                     ?>
                 <tr>
@@ -97,6 +102,14 @@
         				  <td><?php echo $tulisan_author;?></td>
         				  <td><?php echo $tulisan_views;?></td>
         				  <td><?php echo $kategori_nama;?></td>
+                  <?php if($this->session->userdata('akses')=='1'){ ?>
+                  <td><?php echo $tulisan_status; ?></td>
+                  <td style="text-align: right;">
+                    
+                    <a class="btn" href="#modalAktif<?php echo $tulisan_id ?>" data-toggle="modal" title="Aktif"><span class="fa fa-thumbs-up"></span></a>
+                    <a class="btn" href="#modalNonaktif<?php echo $tulisan_id ?>" data-toggle="modal" title="Non aktif"><span class="fa fa-close"></span></a>
+                  <?php } ?>
+                  </td>
                   <td style="text-align:right;">
                         <a class="btn" href="<?php echo base_url().'admin/tulisan/get_edit/'.$tulisan_id;?>"><span class="fa fa-pencil"></span></a>
                       <?php if($this->session->userdata('akses') == '1') { ?>
@@ -150,6 +163,69 @@
             </div>
         </div>
 	<?php endforeach;?>
+
+   <!-- Modal non aktif akun -->
+        <?php foreach ($data->result_array() as $i) {
+            $tulisan_id=$i['tulisan_id'];
+            $tulisan_judul=$i['tulisan_judul'];         
+          ?>
+
+            <div id="modalNonaktif<?php echo $tulisan_id ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h3 class="modal-title" id="myModalLabel">Nonaktifkan akun</h3>
+                                </div>
+
+                                <form class="form-horizontal" method="post" action="<?php echo base_url().'admin/tulisan/nonaktifkan'?>">
+                                    
+                                    <div class="modal-body">
+                                        <p>Yakin mau nonaktifkan Akses ini ..?</p>
+                                        <input name="kode" type="hidden" value="<?php echo $tulisan_id; ?>">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                                        <button type="submit" class="btn btn-danger">Non aktif</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>  
+
+          <!-- Modal aktif akun -->
+        <?php foreach ($data->result_array() as $i) {
+            $tulisan_id=$i['tulisan_id'];
+            $tulisan_judul=$i['tulisan_judul'];
+          ?>
+
+          <div id="modalAktif<?php echo $tulisan_id ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h3 class="modal-title" id="myModalLabel">Aktifkan Akun</h3>
+                                </div>
+                                <form class="form-horizontal" method="post" action="<?php echo base_url().'admin/tulisan/aktif'?>">
+                                    
+                                    <div class="modal-body">
+                                        <p>Yakin mau Aktifkan akses ini..?</p>
+                                        <input name="kode" type="hidden" value="<?php echo $tulisan_id; ?>">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                                        <button type="submit" class="btn btn-primary">aktif</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
 
 
 
