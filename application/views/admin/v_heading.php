@@ -70,9 +70,9 @@
                     ?>
                 <tr>
                   <?php if(empty($photo)):?>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'theme/images/user_blank.png';?>"></td>
                   <?php else:?>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/'.$photo;?>"></td>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'theme/images/'.$photo;?>"></td>
                   <?php endif;?>
                   <td><?php echo $judul;?></td>
                   <td><?php echo $desc;?></td>

@@ -1,6 +1,7 @@
     <script src="<?php echo base_url().'theme/js/jquery.min.js'?>"></script>
     <script src="<?php echo base_url().'theme/js/tether.min.js'?>"></script>
     <script src="<?php echo base_url().'theme/js/bootstrap.min.js'?>"></script>
+    
     <!-- Plugins -->
     <script src="<?php echo base_url().'theme/js/moment.min.js'?>"></script>
     <script src="<?php echo base_url().'theme/js/fullcalendar.min.js'?>"></script>

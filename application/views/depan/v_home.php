@@ -24,7 +24,48 @@ $this->load->view('depan/v_navbar');
  ?>    
 
 <section>
-    <div class="slider_img layout_two">
+   <div class="slider_img layout_two">
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <?php
+                $heading = $this->m_heading->get_heading_data()->result_array();
+                foreach ($heading as $key => $value) {
+                    $active = ($key == 0) ? 'active' : '';
+                    echo '<li data-target="#carousel" data-slide-to="' . $key . '" class="' . $active . '"></li>';
+                }
+                ?>
+                
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <?php
+                foreach ($heading as $key => $value) {
+                    $active = ($key == 0) ? 'active' : ''; 
+                echo '<div class="carousel-item '. $active .'">
+                    <img class="d-block" src="'. base_url().'theme/images/'. $value['heading_image'] .'">
+                    <div class="carousel-caption d-md-block">
+                        <div class="slider_title" data-aos="fade-up" data-aos-delay="100">
+                            <h1>' .$value['heading_judul']. '</h1>
+                            <h4>'. $value['heading_description'] .'</h4>
+                        </div>
+                    </div>
+                </div>';
+            }
+            ?>
+                
+            </div>
+            
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                <i class="icon-arrow-left fa-slider" aria-hidden="true"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                <i class="icon-arrow-right fa-slider" aria-hidden="true"></i>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- <div class="slider_img layout_two">
         <div id="carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -81,7 +122,7 @@ $this->load->view('depan/v_navbar');
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    </div>
+    </div> -->
 </section>
 <!--//END HEADER -->
 <!--============================= ABOUT =============================-->
