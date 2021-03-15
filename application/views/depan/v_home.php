@@ -50,8 +50,7 @@ $this->load->view('depan/v_navbar');
                     </div>
                 </div>';
             }
-            ?>
-                
+            ?>   
             </div>
             
             <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">

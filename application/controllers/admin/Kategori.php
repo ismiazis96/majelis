@@ -12,6 +12,10 @@ class Kategori extends CI_Controller{
 
 
 	function index(){
+		if($this->session->userdata('akses') == '3' ){
+			echo "anda bukan admin";
+			redirect('admin/dashboard');
+		}
 		$x['data']=$this->m_kategori->get_all_kategori();
 		$this->load->view('admin/v_kategori',$x);
 	}

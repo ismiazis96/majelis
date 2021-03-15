@@ -45,7 +45,9 @@
 
           <div class="box">
             <div class="box-header">
+              <?php if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')== '2'){ ?>
               <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add Album</a>
+              <?php } ?>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -57,7 +59,9 @@
           					<th>Tanggal</th>
           					<th>Author</th>
           					<th>Jumlah</th>
+                    <?php if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')== '2'){ ?>
                     <th style="text-align:right;">Aksi</th>
+                    <?php } ?>
                 </tr>
                 </thead>
                 <tbody>
@@ -79,10 +83,12 @@
         				  <td><?php echo $album_tanggal;?></td>
         				  <td><?php echo $album_author;?></td>
         				  <td><?php echo $album_jumlah;?></td>
+                  <?php if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')== '2'){ ?>
                   <td style="text-align:right;">
                         <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $album_id;?>"><span class="fa fa-pencil"></span></a>
                         <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $album_id;?>"><span class="fa fa-trash"></span></a>
                   </td>
+                  <?php } ?>
                 </tr>
 				<?php endforeach;?>
                 </tbody>

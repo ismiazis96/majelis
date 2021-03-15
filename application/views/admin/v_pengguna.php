@@ -85,6 +85,8 @@
                   <?php endif;?>
                   <?php if($pengguna_level=='1'):?>
                         <td>Administrator</td>
+                  <?php elseif($pengguna_level=='2'):?>
+                        <td>Admin</td>      
                   <?php else:?>
                         <td>Author</td>
                   <?php endif;?>
@@ -183,6 +185,7 @@
                                         <div class="col-sm-7">
                                             <select class="form-control" name="xlevel" required>
                                                 <option value="1">Administrator</option>
+                                                <option value="2">Admin</option>
                                                 <option value="3">Author</option>
                                             </select>
                                         </div>
@@ -295,9 +298,15 @@
                                             <select class="form-control" name="xlevel" required>
 											<?php if($pengguna_level=='1'):?>
                                                 <option value="1" selected>Administrator</option>
+                                                <option value="2">Admin</option>
+                                                <option value="3">Author</option>
+                                                <?php elseif($penguna_level=='2'): ?>
+                                                <option value="1">Administrator</option>
+                                                <option value="2" selected>Admin</option>
                                                 <option value="3">Author</option>
 											<?php else:?>
 												<option value="1">Administrator</option>
+                        <option value="2">Admin</option>
                                                 <option value="3" selected>Author</option>
 											<?php endif;?>
                                             </select>

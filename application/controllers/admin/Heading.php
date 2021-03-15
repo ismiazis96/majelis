@@ -14,6 +14,10 @@ class Heading extends CI_Controller{
 	}
 
 	function index(){
+		if($this->session->userdata('akses') != '1' ){
+			echo "anda bukan admin";
+			redirect('admin/dashboard');
+		}
 		$x['title'] = 'Majelis | Heading';
 		$x['data'] = $this->m_heading->get_heading_data();
 		

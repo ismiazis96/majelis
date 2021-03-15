@@ -48,7 +48,9 @@
 
           <div class="box">
             <div class="box-header">
+              <?php if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')== '2'){ ?>
               <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add Agenda</a>
+              <?php } ?>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -61,7 +63,9 @@
                     <th>Tempat</th>
                     <th>Waktu</th>
                     <th>Author</th>
+                    <?php if($this->session->userdata('akses') == '1' || $this->session->userdata('akses') == '2'){ ?>
                     <th style="text-align:right;">Aksi</th>
+                    <?php } ?>
                 </tr>
                 </thead>
                 <tbody>
@@ -88,10 +92,12 @@
                   <td><?php echo $agenda_tempat;?></td>
                   <td><?php echo $agenda_waktu;?></td>
                   <td><?php echo $agenda_author;?></td>
+                  <?php if($this->session->userdata('akses') == '1' || $this->session->userdata('akses') == '2'){ ?>
                   <td style="text-align:right;">
                         <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $agenda_id;?>"><span class="fa fa-pencil"></span></a>
                         <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $agenda_id;?>"><span class="fa fa-trash"></span></a>
                   </td>
+                  <?php } ?>
                 </tr>
 				<?php endforeach;?>
                 </tbody>

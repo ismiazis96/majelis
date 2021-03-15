@@ -10,6 +10,10 @@ class Komentar extends CI_Controller{
     }
 
     function index(){
+        if($this->session->userdata('akses') == '3' ){
+            echo "anda bukan admin";
+            redirect('admin/dashboard');
+        }
         $x['title'] = 'Majelis | Komentar';
         $x['data']=$this->db->query("SELECT tbl_komentar.*,tulisan_judul,tulisan_slug FROM tbl_komentar JOIN tbl_tulisan ON komentar_tulisan_id=tulisan_id ORDER BY komentar_id DESC");
         $this->load->view('admin/v_komentar',$x);

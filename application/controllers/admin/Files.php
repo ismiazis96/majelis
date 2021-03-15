@@ -14,6 +14,10 @@ class Files extends CI_Controller{
 
 
 	function index(){
+		if($this->session->userdata('akses') == '3' ){
+			echo "anda bukan admin";
+			redirect('admin/dashboard');
+		}
 		$x['title'] = 'Majelis | File';
 		$x['data']=$this->m_files->get_all_files();
 		$this->load->view('admin/v_files',$x);

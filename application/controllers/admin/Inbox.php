@@ -10,6 +10,10 @@ class Inbox extends CI_Controller{
 	}
 
 	function index(){
+		if($this->session->userdata('akses') == '3' ){
+			echo "anda bukan admin";
+			redirect('admin/dashboard');
+		}
 		$x['title'] = 'Majelis | Inbox';
 		$this->m_kontak->update_status_kontak();
 		$x['data']=$this->m_kontak->get_all_inbox();

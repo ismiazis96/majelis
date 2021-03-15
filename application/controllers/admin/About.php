@@ -13,7 +13,12 @@ class About extends CI_Controller{
 		$this->load->helper('text');
 	}
 
-	function index(){
+	function index()
+	{
+		if($this->session->userdata('akses') == '3' ){
+			echo "anda bukan admin";
+			redirect('admin/dashboard');
+		}
 		$x['title'] = 'Majelis | About';
 		$data = $this->m_about->get_about_data()->row();
 		$x['about_id'] = $data->about_id;

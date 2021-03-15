@@ -13,6 +13,10 @@ class Guru extends CI_Controller{
 
 
 	function index(){
+		if($this->session->userdata('akses') == '3' ){
+			echo "anda bukan admin";
+			redirect('admin/dashboard');
+		}
 		$x['title'] = 'Majelis | Guru';
 		$x['data']=$this->m_guru->get_all_guru();
 		$this->load->view('admin/v_guru',$x);

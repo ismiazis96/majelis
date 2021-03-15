@@ -14,6 +14,10 @@ class Siswa extends CI_Controller{
 
 
 	function index(){
+		if($this->session->userdata('akses') == '3' ){
+			echo "anda bukan admin";
+			redirect('admin/dashboard');
+		}
 		$x['title'] = 'Majelis | Anggota';
 		$x['kelas']=$this->m_kelas->get_all_kelas();
 		$x['data']=$this->m_siswa->get_all_siswa();
