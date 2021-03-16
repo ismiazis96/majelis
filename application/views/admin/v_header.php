@@ -86,7 +86,12 @@
                 </p>
               </li>
               <!-- Menu Body -->
-
+              <!-- menu ganti password -->
+              <li class="user-footer">
+                <div class="pull-right">
+                  <a href="<?php echo base_url().'admin/ganti_password/'?>" class="btn btn-default btn-flat">Ubah Password</a>
+                </div>
+              </li>
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-right">

@@ -8,6 +8,7 @@ class Home extends CI_Controller{
 		$this->load->model('m_agenda');
 		$this->load->model('m_files');
 		$this->load->model('m_pengunjung');
+		$this->load->model('m_testimonial');
 		$this->load->model('m_heading');
 		$this->m_pengunjung->count_visitor();
 	}
@@ -17,6 +18,7 @@ class Home extends CI_Controller{
 			$x['berita']=$this->m_tulisan->get_berita_home();
 			$x['pengumuman']=$this->m_pengumuman->get_pengumuman_home();
 			$x['agenda']=$this->m_agenda->get_agenda_home();
+			$x['testimonial']=$this->m_testimonial->get_testimonial();
 			$x['tot_guru']=$this->db->get('tbl_guru')->num_rows();
 			$x['tot_siswa']=$this->db->get('tbl_siswa')->num_rows();
 			$x['tot_files']=$this->db->get('tbl_files')->num_rows();

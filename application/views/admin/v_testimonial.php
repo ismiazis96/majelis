@@ -27,12 +27,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Heading
+        Data Testimonial
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Heading</li>
+        <li class="active">Testi</li>
       </ol>
     </section>
 
@@ -44,45 +44,50 @@
 
           <div class="box">
             <div class="box-header">
-              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add Heading</a>
+              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add Testi</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-striped" style="font-size:13px;">
+              <table id="example1" class="table table-striped" style="font-size: 13px;">
                 <thead>
-                <tr>
+                  <tr>
+                    <th>No</th>
                     <th>Photo</th>
-                    <th>Judul</th>
-                    <th>Description</th>
-                    <th style="text-align:right;">Aksi</th>
-                </tr>
+                    <th>Nama</th>
+                    <th>Content</th>
+                    <th>Status</th>
+                    <th style="text-align: right;">Aksi</th>
+                  </tr>
                 </thead>
                 <tbody>
                   <?php
-                    $no=0;
-                    foreach ($data->result_array() as $i) :
-                       $no++;
-                       $id=$i['heading_id'];
-                       $judul=$i['heading_judul'];
-                       $desc=$i['heading_description'];
-                       $photo=$i['heading_image'];
-
-                    ?>
-                <tr>
+                  $no=0;
+                  foreach ($data->result_array() as $i) :
+                    $no++;
+                    $id=$i['testimonial_id'];
+                    $nama=$i['testimonial_name'];
+                    $content=$i['testimonial_content'];
+                    $photo=$i['testimonial_image'];
+                    $status=$i['testimonial_status'];
+                  ?>
+                  <tr>
+                    <td><?php echo $no;?></td>
                   <?php if(empty($photo)):?>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'theme/images/banner/user_blank.png';?>"></td>
-                  <?php else:?>
-                  <td><img src="<?php echo base_url().'theme/images/banner/'.$photo;?>" style="width:100px;"></td>
+                    <td><img width="40" height="40" src="<?php echo base_url().'theme/images/testimonial/user_blank.png';?>" alt=""></td>
+                  <?php else: ?>
+                    <td><img width="40" height="40" src="<?php echo base_url().'theme/images/testimonial/'.$photo;?>" alt=""></td>
                   <?php endif;?>
-                  <td><?php echo $judul;?></td>
-                  <td><?php echo $desc;?></td>
-                  
-                  <td style="text-align:right;">
+                      <td><?php echo $nama;?></td>
+                      <td><?php echo $content;?></td>
+                      <td><?php echo $status;?></td>
+                      <td style="text-align:right;">
                         <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
                         <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
-                  </td>
-                </tr>
-        <?php endforeach;?>
+                      </td>
+
+                  </tr> 
+                  <?php endforeach;
+                  ?>
                 </tbody>
               </table>
             </div>
@@ -101,38 +106,45 @@
     $this->load->view('admin/v_footer');
   ?>
 
-    <!--Modal Add Pengguna-->
+
+    <!--Modal Add Testi-->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Add Heading</h4>
+                        <h4 class="modal-title" id="myModalLabel">Add Testi</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/heading/simpan_heading'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/testimonial/save'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Judul</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="judul" class="form-control" id="inputUserName" placeholder="masukan judul" required>
-                                        </div>
-                                    </div>
+                        <div class="form-group">
+                            <label for="inputUserName" class="col-sm-2 control-label">Nama</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="nama" class="form-control" id="inputUserName" placeholder="Masukan Nama" required>
+                            </div>
+                        </div>
 
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Desciption</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="desc" class="form-control" id="inputUserName" placeholder="desc" required>
-                                        </div>
-                                    </div>
+                        <div class="form-group">
+                            <label for="inputUserName" class="col-sm-2 control-label">Content</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="content" class="form-control" id="inputUserName" placeholder="Masukan Content" required>
+                            </div>
+                        </div>
 
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Photo</label>
-                                        <div class="col-sm-7">
-                                            <input type="file" name="photo"/>
-                                        </div>
-                                    </div>
+                        <div class="form-group">
+                            <label for="inputUserName" class="col-sm-2 control-label">Status</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="status" class="form-control" id="inputUserName" placeholder="Contoh: Pekerjaan, Pelajar" required>
+                            </div>
+                        </div>
 
+                        <div class="form-group">
+                            <label for="inputUserName" class="col-sm-2 control-label">Photo</label>
+                            <div class="col-sm-9">
+                                <input type="file" name="gambar"/>
+                            </div>
+                        </div>
 
                     </div>
                     <div class="modal-footer">
@@ -143,13 +155,13 @@
                 </div>
             </div>
         </div>
-
   <!--Modal Edit Album-->
   <?php foreach ($data->result_array() as $i) :
-              $id=$i['heading_id'];
-              $judul=$i['heading_judul'];
-              $desc=$i['heading_description'];
-              $photo=$i['heading_image'];
+              $id=$i['testimonial_id'];
+              $nama=$i['testimonial_name'];
+              $content=$i['testimonial_content'];
+              $photo=$i['testimonial_image'];
+              $status=$i['testimonial_status'];
             ?>
 
         <div class="modal fade" id="ModalEdit<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -157,32 +169,38 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Heading</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit Testi</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/heading/update_heading'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/testimonial/update_testimonial'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-                                <input type="hidden" name="kode" value="<?php echo $id;?>"/>
-                                <input type="hidden" value="<?php echo $photo;?>" name="gambar">
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Judul</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="judul" value="<?php echo $judul;?>" class="form-control" id="inputUserName" placeholder="Judul" required>
-                                        </div>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Desc</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="desc" value="<?php echo $desc;?>" class="form-control" id="inputUserName" placeholder="Desciption" required>
-                                        </div>
-                                    </div>
+                        <div class="form-group">
+                            <label for="inputUserName" class="col-sm-2 control-label">Nama</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="nama" class="form-control" id="inputUserName" placeholder="Masukan Nama" value="<?php echo $nama;?>" required>
+                            </div>
+                        </div>
 
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Photo</label>
-                                        <div class="col-sm-7">
-                                            <input type="file" name="photo"/>
-                                        </div>
-                                    </div>
+                        <div class="form-group">
+                            <label for="inputUserName" class="col-sm-2 control-label">Content</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="content" class="form-control" id="inputUserName" placeholder="Masukan Content" value="<?php echo $content;?>" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputUserName" class="col-sm-2 control-label">Status</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="status" class="form-control" id="inputUserName" placeholder="Contoh: Pekerjaan, Pelajar" value="<?php echo $status;?>" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputUserName" class="col-sm-2 control-label">Photo</label>
+                            <div class="col-sm-9">
+                                <input type="file" name="gambar"/>
+                            </div>
+                        </div>
 
                     </div>
                     <div class="modal-footer">
@@ -194,27 +212,25 @@
             </div>
         </div>
   <?php endforeach;?>
-  <!--Modal Edit Album-->
+	<!--Modal Edit Album-->
 
-  <?php foreach ($data->result_array() as $i) :
-              $id=$i['heading_id'];
-              $judul=$i['heading_judul'];
-              $desc=$i['heading_description'];
-              $photo=$i['heading_image'];
+	<?php foreach ($data->result_array() as $i) :
+              $id=$i['testimonial_id'];
+              $nama=$i['testimonial_name'];
             ?>
-  <!--Modal Hapus Pengguna-->
+	<!--Modal Hapus Pengguna-->
         <div class="modal fade" id="ModalHapus<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus Heading</h4>
+                        <h4 class="modal-title" id="myModalLabel">Hapus Testimonial</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/heading/hapus_heading'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/testimonial/hapus_testimonial'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-                     <input type="hidden" name="kode" value="<?php echo $id;?>"/>
+							       <input type="hidden" name="kode" value="<?php echo $id;?>"/>
                      <input type="hidden" value="<?php echo $photo;?>" name="gambar">
-                            <p>Apakah Anda yakin mau menghapus heading <b><?php echo $judul;?></b> ?</p>
+                            <p>Apakah Anda yakin mau menghapus Testimonial <b><?php echo $nama;?></b> ?</p>
 
                     </div>
                     <div class="modal-footer">
@@ -225,7 +241,7 @@
                 </div>
             </div>
         </div>
-  <?php endforeach;?>
+	<?php endforeach;?>
 
 
 

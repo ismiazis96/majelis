@@ -41,7 +41,7 @@ $this->load->view('depan/v_navbar');
                     </div>
                     <div class="blog-tiltle_block">
                         <h4><a href="<?php echo site_url('artikel/'.$row->tulisan_slug);?>"><?php echo $row->tulisan_judul;?></a></h4>
-                        <h6> <a href="#"><i class="fa fa-user" aria-hidden="true"></i><span><?php echo $row->tulisan_author;?></span> </a>  |   <a href="#"><i class="fa fa-tags" aria-hidden="true"></i><span><?php echo $row->tulisan_kategori_nama;?></span></a></h6>
+                        <h6> <a href="#"><i class="fa fa-user" aria-hidden="true"></i><span><?php echo $row->tulisan_author;?></span> </a>  |   <a href="#"><i class="fa fa-tags" aria-hidden="true"></i><span><?php echo $row->tulisan_kategori_nama;?></span></a>  |  <a href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i><span><?php echo $row->tulisan_views;?> dibaca</span> </a></h6>
                         <?php echo limit_words($row->tulisan_isi,10).'...';?>
                         <div class="blog-icons">
                             <div class="blog-share_block">
@@ -54,6 +54,7 @@ $this->load->view('depan/v_navbar');
                 <nav>
                     <?php error_reporting(0); echo $page;?>
                 </nav>
+                
             </div>
             <div class="col-md-4">
                 <form action="<?php echo site_url('blog/search');?>" method="get">

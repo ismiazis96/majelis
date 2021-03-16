@@ -25,7 +25,7 @@ class Heading extends CI_Controller{
 	}
 
 	function simpan_heading(){
-				$config['upload_path'] = './theme/images/'; //path folder
+				$config['upload_path'] = './theme/images/banner/'; //path folder
 	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	            $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
@@ -37,13 +37,14 @@ class Heading extends CI_Controller{
 	                        $gbr = $this->upload->data();
 	                        //Compress Image
 	                        $config['image_library']='gd2';
-	                        $config['source_image']='./theme/images/'.$gbr['file_name'];
+	                        $config['source_image']='./theme/images/banner/'.$gbr['file_name'];
 	                        $config['create_thumb']= FALSE;
 	                        $config['maintain_ratio']= FALSE;
+	                        $config['max_size']     = '1000';
 	                        // $config['quality']= '60%';
 	                        $config['width']= 2000;
 	                        $config['height']= 783;
-	                        $config['new_image']= './theme/images/'.$gbr['file_name'];
+	                        $config['new_image']= './theme/images/banner/'.$gbr['file_name'];
 	                        $this->load->library('image_lib', $config);
 	                        $this->image_lib->resize();
 
@@ -72,7 +73,7 @@ class Heading extends CI_Controller{
 	
 	function update_heading(){
 				
-	            $config['upload_path'] = './theme/images/'; //path folder
+	            $config['upload_path'] = './theme/images/banner/'; //path folder
 	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	            $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
@@ -84,13 +85,13 @@ class Heading extends CI_Controller{
 	                        $gbr = $this->upload->data();
 	                        //Compress Image
 	                        $config['image_library']='gd2';
-	                        $config['source_image']='./theme/images/'.$gbr['file_name'];
+	                        $config['source_image']='./theme/images/banner/'.$gbr['file_name'];
 	                        $config['create_thumb']= FALSE;
 	                        $config['maintain_ratio']= FALSE;
 	                        $config['quality']= '60%';
 	                        $config['width']= 300;
 	                        $config['height']= 300;
-	                        $config['new_image']= './theme/images/'.$gbr['file_name'];
+	                        $config['new_image']= './theme/images/banner/'.$gbr['file_name'];
 	                        $this->load->library('image_lib', $config);
 	                        $this->image_lib->resize();
 	                        $gambar=$this->input->post('gambar');

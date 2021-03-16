@@ -47,7 +47,7 @@ class M_tulisan extends CI_Model{
 	}
 
 	function berita_perpage($offset,$limit){
-		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_tulisan ORDER BY tulisan_id DESC limit $offset,$limit");
+		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_tulisan WHERE tulisan_status='1' ORDER BY tulisan_id DESC limit $offset,$limit");
 		return $hsl;
 	}
 

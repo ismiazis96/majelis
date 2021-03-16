@@ -45,24 +45,23 @@ $this->load->view('depan/v_navbar');
                 </div>
                 <div class="col-md-12">
                     <div class="single-item">
+                        <?php foreach ($testimonial->result() as $row): ?>
                         <div class="quote">
-                            <i class="fa fa-quote-left" aria-hidden="true"></i>
-                            <p class="quote_text">MSCHOOL benar-benar mengagumkan. Saya sangat senang bisa bergabung dengan MSCHOOL dan menjadi siswa terbaik tahun 2018.</p>
+                            <i class="fa fa-quote-left" aria-hidden="true"></i>                   
+                            <p class="quote_text"><?php echo $row->testimonial_content;?>.</p>
                             <div class="testi-img_block">
-                                <img src="<?php echo base_url().'theme/images/student-1.png'?>" class="img-fluid" alt="#">
-                                <p><span>Hernandez Alvaro</span>Siswa Terbaik 2018</p>
-                            </div>
+                        <?php if(empty($row->testimonial_image)):?>
+                            <img width="40" height="40" src="<?php echo base_url().'theme/images/testimonial/user_blank.png';?>" alt="">
+                        <?php else: ?>
+                            <img src="<?php echo base_url().'theme/images/testimonial/'.$row->testimonial_image;?>" class="img-fluid" alt="#">
+                        <?php endif;?>       
+                            <p><span><?php echo $row->testimonial_name; ?></span><?php echo $row->testimonial_status;?></p>
+                            </div>    
                         </div>
-                        <div class="quote">
-                            <i class="fa fa-quote-left" aria-hidden="true"></i>
-                            <p class="quote_text">MSCHOOL benar-benar mengagumkan. Saya sangat senang bisa bergabung dengan MSCHOOL dan menjadi siswa terbaik tahun 2017. </p>
-                            <div class="testi-img_block">
-                                <img src="<?php echo base_url().'theme/images/student-2.png'?>" class="img-fluid" alt="#">
-                                <p><span>Elanoar Rigby</span>Siswa Terbaik 2017</p>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>

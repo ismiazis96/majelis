@@ -41,7 +41,7 @@ $this->load->view('depan/v_navbar');
                 foreach ($heading as $key => $value) {
                     $active = ($key == 0) ? 'active' : ''; 
                 echo '<div class="carousel-item '. $active .'">
-                    <img class="d-block" src="'. base_url().'theme/images/'. $value['heading_image'] .'">
+                    <img class="d-block" src="'. base_url().'theme/images/banner/'. $value['heading_image'] .'">
                     <div class="carousel-caption d-md-block">
                         <div class="slider_title" data-aos="fade-up" data-aos-delay="100">
                             <h1>' .$value['heading_judul']. '</h1>
@@ -215,6 +215,37 @@ $this->load->view('depan/v_navbar');
         </div>
     </div>
 </section>
+<!--============================= TESTIMONIAL =============================-->
+    <section class="testimonial">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Testimonial</h2>
+                </div>
+                <div class="col-md-12">
+                    <div class="single-item">
+                        <?php foreach ($testimonial->result() as $row): ?>
+                        <div class="quote">
+                            <i class="fa fa-quote-left" aria-hidden="true"></i>                   
+                            <p class="quote_text"><?php echo $row->testimonial_content;?>.</p>
+                            <div class="testi-img_block">
+                        <?php if(empty($row->testimonial_image)):?>
+                            <img width="40" height="40" src="<?php echo base_url().'theme/images/testimonial/user_blank.png';?>" alt="">
+                        <?php else: ?>
+                            <img src="<?php echo base_url().'theme/images/testimonial/'.$row->testimonial_image;?>" class="img-fluid" alt="#">
+                        <?php endif;?>       
+                            <p><span><?php echo $row->testimonial_name; ?></span><?php echo $row->testimonial_status;?></p>
+                            </div>    
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!--//END TESTIMONIAL -->
+
 <!--//END EVENTS -->
 <!--============================= DETAILED CHART =============================-->
 <div class="detailed_chart">

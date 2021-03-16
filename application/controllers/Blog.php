@@ -116,8 +116,8 @@ class Blog extends CI_Controller{
 			        'komentar_nama' 			=> $nama,
 			        'komentar_email' 			=> $email,
 			        'komentar_isi' 				=> $komentar,
-							'komentar_status' 		=> 0,
-							'komentar_tulisan_id' => $kode
+					'komentar_status' 		=> 0,
+					'komentar_tulisan_id' => $kode
 					);
 
 					$this->db->insert('tbl_komentar', $data);

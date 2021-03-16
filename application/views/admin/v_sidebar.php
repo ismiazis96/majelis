@@ -126,6 +126,15 @@
           </a>
         </li>
 
+        <li>
+          <a href="<?php echo base_url().'admin/testimonial'?>">
+            <i class="fa fa-thumb-tack"></i> <span>Testimonial</span>
+            <!-- <span class="pull-right-container">
+              <small class="label pull-right bg-green"><?php echo $jum_comment;?></small>
+            </span> -->
+          </a>
+        </li>
+
          <li>
           <a href="<?php echo base_url().'administrator/logout'?>">
             <i class="fa fa-sign-out"></i> <span>Sign Out</span>
