@@ -8,7 +8,7 @@
         }
     ?>
     <!-- Required meta tags -->
-    <?php $this->load->view('depan/v_css'); ?>
+    <?php $this->load->view('depan/layout/v_css'); ?>
     <style>
     	.sharePopup{
     		font-size: 11px;
@@ -24,14 +24,10 @@
 
 <body>
   <!--============================= HEADER =============================-->
-  <?php 
-$this->load->view('depan/v_topbar');
- ?>
+<?php $this->load->view('depan/layout/v_topbar'); ?>
  
      <!-- NAVBAR -->
-<?php 
-$this->load->view('depan/v_navbar');
- ?>
+<?php $this->load->view('depan/layout/v_navbar'); ?>
     <section>
 </section>
 <!--//END HEADER -->
@@ -48,7 +44,7 @@ $this->load->view('depan/v_navbar');
                 </div>
                 <div class="blog-tiltle_block">
                     <h4><a href="<?php echo site_url('artikel/'.$slug);?>"><?php echo $title;?></a></h4>
-                    <h6> <a href="#"><i class="fa fa-user" aria-hidden="true"></i><span><?php echo $author;?></span> </a>  |   <a href="#"><i class="fa fa-tags" aria-hidden="true"></i><span><?php echo $kategori;?></span></a></h6>
+                    <h6> <a href="#"><i class="fa fa-user" aria-hidden="true"></i><span><?php echo $author;?></span> </a>  |   <a href="#"><i class="fa fa-tags" aria-hidden="true"></i><span><?php echo $kategori;?></span></a>  |  <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><span><?php echo $tulisan;?> Kali dibaca</span> </a></h6>
                     <?php echo $blog;?>
                 </div>
 
@@ -200,12 +196,10 @@ $this->load->view('depan/v_navbar');
 </section>
 <!--//END BLOG -->
 <!--============================= FOOTER =============================-->
-    <?php 
-    $this->load->view('depan/v_footer');
-     ?>
+        <?php $this->load->view('depan/layout/v_footer'); ?>
         <!--//END FOOTER -->
         <!-- jQuery, Bootstrap JS. -->
-        <?php $this->load->view('depan/v_js'); ?>
+        <?php $this->load->view('depan/layout/v_js'); ?>
     </body>
 
     </html>

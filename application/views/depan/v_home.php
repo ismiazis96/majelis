@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view('depan/v_css'); ?>
+    <?php $this->load->view('depan/layout/v_css'); ?>
     <?php
         function limit_words($string, $word_limit){
             $words = explode(" ",$string);
@@ -14,16 +14,13 @@
 <body>
     <!--============================= HEADER =============================-->
     <!-- TOPBAR -->
-<?php 
-$this->load->view('depan/v_topbar');
- ?>
+    <?php $this->load->view('depan/layout/v_topbar'); ?>
 
     <!-- NAVBAR -->
-<?php 
-$this->load->view('depan/v_navbar');
- ?>    
+    <?php $this->load->view('depan/layout/v_navbar'); ?>    
 
 <section>
+    <!-- Banner -->
    <div class="slider_img layout_two">
         <div id="carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -41,7 +38,7 @@ $this->load->view('depan/v_navbar');
                 foreach ($heading as $key => $value) {
                     $active = ($key == 0) ? 'active' : ''; 
                 echo '<div class="carousel-item '. $active .'">
-                    <img class="d-block" src="'. base_url().'theme/images/banner/'. $value['heading_image'] .'">
+                    <img style="opacity:0.5; =" class="d-block" src="'. base_url().'theme/images/banner/'. $value['heading_image'] .'">
                     <div class="carousel-caption d-md-block">
                         <div class="slider_title" data-aos="fade-up" data-aos-delay="100">
                             <h1>' .$value['heading_judul']. '</h1>
@@ -64,64 +61,6 @@ $this->load->view('depan/v_navbar');
         </div>
     </div>
 
-    <!-- <div class="slider_img layout_two">
-        <div id="carousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel" data-slide-to="1"></li>
-                <li data-target="#carousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
-                    <img class="d-block" src="<?php echo base_url().'theme/images/slider.jpg'?>" alt="First slide">
-                    <div class="carousel-caption d-md-block">
-                        <div class="slider_title" data-aos="fade-up" data-aos-delay="100">
-                            <h1>Artikel berkualitas untuk pembaca</h1>
-                            <h4>Guru merupakan faktor penting dalam proses belajar-mengajar.<br> Itulah kenapa kami mendatangkan guru-guru <br>terbaik dari berbagai penjuru.</h4>
-                            <div class="slider-btn">
-                                <a href="<?php echo site_url('artikel');?>" class="btn btn-default">Learn more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block" src="<?php echo base_url().'theme/images/slider-2.jpg'?>" alt="Second slide">
-                    <div class="carousel-caption d-md-block">
-                        <div class="slider_title" data-aos="fade-up"
-              data-aos-delay="100">
-                            <h1>Guru Bekualitas Tinggi</h1>
-                            <h4>Guru merupakan faktor penting dalam proses belajar-mengajar.<br> Itulah kenapa kami mendatangkan guru-guru <br>terbaik dari berbagai penjuru.</h4>
-                            <div class="slider-btn">
-                                <a href="<?php echo site_url('guru');?>" class="btn btn-default">Learn more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block" src="<?php echo base_url().'theme/images/slider-3.jpg'?>" alt="Third slide">
-                    <div class="carousel-caption d-md-block">
-                        <div class="slider_title" data-aos="fade-up"
-              data-aos-delay="100">
-                            <h1>Proses Belajar dan Mengaji Interatif</h1>
-                            <h4>Kami membuat proses belajar mengajar menjadi lebih interatif.<br> dengan demikian anggota lebih menyukai <br>proses belajar dan mengaji.</h4>
-                            <div class="slider-btn">
-                                <a href="<?php echo site_url('galeri');?>" class="btn btn-default">Learn more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                <i class="icon-arrow-left fa-slider" aria-hidden="true"></i>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-                <i class="icon-arrow-right fa-slider" aria-hidden="true"></i>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div> -->
 </section>
 <!--//END HEADER -->
 <!--============================= ABOUT =============================-->
@@ -291,12 +230,10 @@ $this->load->view('depan/v_navbar');
 </div>
 <!--//END DETAILED CHART -->
 <!--============================= FOOTER =============================-->
-<?php 
-$this->load->view('depan/v_footer');
- ?>
+<?php $this->load->view('depan/layout/v_footer'); ?>
         <!--//END FOOTER -->
         <!-- jQuery, Bootstrap JS. -->
-        <?php $this->load->view('depan/v_js'); ?>
+        <?php $this->load->view('depan/layout/v_js'); ?>
     </body>
 
     </html>

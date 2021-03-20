@@ -13,6 +13,7 @@
   <title><?php echo $title; ?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <?php $this->load->view('admin/v_head'); ?>
+    
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -54,6 +55,19 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+              <div class="flash-data" data-flashdata="<?= $this->session->flashdata('msg'); ?>"></div>
+    <?php if ($this->session->flashdata('msg')) : ?>
+    <!-- <div class="row mt-3">
+        <div class="col-md-6">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                Data mahasiswa <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div> -->
+    <?php endif; ?>
               <table id="example1" class="table table-striped" style="font-size:12px;">
                 <thead>
                 <tr>
@@ -117,6 +131,10 @@
   <?php
     $this->load->view('admin/v_footer');
   ?>
+
+  <!-- /.control-sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>  
 
 
 <!--Modal Add Pengguna-->
@@ -338,8 +356,25 @@
 
 
 <!-- jQuery 2.2.3 -->
-<?php $this->load->view('admin/v_js'); ?>
-<script type="text/javascript" src="<?php echo base_url().'assets/plugins/toast/jquery.toast.min.js'?>"></script>
+<script src="<?php echo base_url().'assets/plugins/jQuery/jquery-2.2.3.min.js'?>"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="<?php echo base_url().'assets/bootstrap/js/bootstrap.min.js'?>"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url().'assets/plugins/datatables/jquery.dataTables.min.js'?>"></script>
+<script src="<?php echo base_url().'assets/plugins/datatables/dataTables.bootstrap.min.js'?>"></script>
+<!-- SlimScroll -->
+<script src="<?php echo base_url().'assets/plugins/slimScroll/jquery.slimscroll.min.js'?>"></script>
+<script src="<?php echo base_url().'assets/plugins/datepicker/bootstrap-datepicker.js'?>"></script>
+<script src="<?php echo base_url().'assets/plugins/timepicker/bootstrap-timepicker.min.js'?>"></script>
+<script src="<?php echo base_url().'assets/plugins/daterangepicker/daterangepicker.js'?>"></script>
+<!-- FastClick -->
+<script src="<?php echo base_url().'assets/plugins/fastclick/fastclick.js'?>"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo base_url().'assets/dist/js/app.min.js'?>"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?php echo base_url().'assets/dist/js/demo.js'?>"></script>
+<script src="<?php echo base_url().'theme/js/sweetalert2.all.min.js' ?>"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url().'assets/plugins/toast/jquery.toast.min.js'?>"></script> -->
 <!-- page script -->
 <script>
   $(function () {
@@ -375,7 +410,7 @@
 
   });
 </script>
-<?php if($this->session->flashdata('msg')=='error'):?>
+<!-- <?php if($this->session->flashdata('msg')=='error'):?>
         <script type="text/javascript">
                 $.toast({
                     heading: 'Error',
@@ -426,6 +461,6 @@
         </script>
     <?php else:?>
 
-    <?php endif;?>
+    <?php endif;?> -->
 </body>
 </html>

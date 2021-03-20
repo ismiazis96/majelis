@@ -171,8 +171,10 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
                         <h4 class="modal-title" id="myModalLabel">Edit Testi</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/testimonial/update_testimonial'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/testimonial/update_testi'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
+                      <input type="hidden" name="kode" value="<?= $id;?>">
+                      <input type="hidden" value="<?= $photo; ?>" name="gambar">
 
                         <div class="form-group">
                             <label for="inputUserName" class="col-sm-2 control-label">Nama</label>

@@ -80,6 +80,8 @@
                   <?php echo $c['pengguna_nama'];?>
                   <?php if($c['pengguna_level']=='1'):?>
                     <small>Administrator</small>
+                  <?php elseif($c['pengguna_level']=='2'): ?>
+                      <small>Admin</small>
                   <?php else:?>
                     <small>Author</small>
                   <?php endif;?>

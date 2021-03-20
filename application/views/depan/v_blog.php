@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view('depan/v_css'); ?>
+    <?php $this->load->view('depan/layout/v_css'); ?>
     <?php
         function limit_words($string, $word_limit){
             $words = explode(" ",$string);
@@ -13,14 +13,10 @@
 
 <body>
   <!--============================= HEADER =============================-->
-  <?php 
-$this->load->view('depan/v_topbar');
- ?>
+<?php $this->load->view('depan/layout/v_topbar'); ?>
   
       <!-- NAVBAR -->
-<?php 
-$this->load->view('depan/v_navbar');
- ?>
+<?php $this->load->view('depan/layout/v_navbar'); ?>
 
     <section>
 </section>
@@ -41,7 +37,7 @@ $this->load->view('depan/v_navbar');
                     </div>
                     <div class="blog-tiltle_block">
                         <h4><a href="<?php echo site_url('artikel/'.$row->tulisan_slug);?>"><?php echo $row->tulisan_judul;?></a></h4>
-                        <h6> <a href="#"><i class="fa fa-user" aria-hidden="true"></i><span><?php echo $row->tulisan_author;?></span> </a>  |   <a href="#"><i class="fa fa-tags" aria-hidden="true"></i><span><?php echo $row->tulisan_kategori_nama;?></span></a>  |  <a href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i><span><?php echo $row->tulisan_views;?> dibaca</span> </a></h6>
+                        <h6> <a href="#"><i class="fa fa-user" aria-hidden="true"></i><span><?php echo $row->tulisan_author;?></span> </a>  |   <a href="#"><i class="fa fa-tags" aria-hidden="true"></i><span><?php echo $row->tulisan_kategori_nama;?></span></a>  |  <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><span><?php echo $row->tulisan_views;?> Kali dibaca</span> </a></h6>
                         <?php echo limit_words($row->tulisan_isi,10).'...';?>
                         <div class="blog-icons">
                             <div class="blog-share_block">
@@ -89,11 +85,11 @@ $this->load->view('depan/v_navbar');
 <!--============================= FOOTER =============================-->
 <!-- FOOTER -->
     <?php 
-    $this->load->view('depan/v_footer');
+    $this->load->view('depan/layout/v_footer');
      ?>
         <!--//END FOOTER -->
         <!-- jQuery, Bootstrap JS. -->
-        <?php $this->load->view('depan/v_js'); ?>
+        <?php $this->load->view('depan/layout/v_js'); ?>
     </body>
 
     </html>

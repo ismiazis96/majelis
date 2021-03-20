@@ -53,6 +53,7 @@ class Testimonial extends CI_Controller{
                 $nama=strip_tags($this->input->post('nama'));
                 $content=strip_tags($this->input->post('content'));
                 $status=strip_tags($this->input->post('status'));
+                //var_dump($photo);die;
                
                 $this->m_testimonial->simpan_testimonial($nama,$content,$status,$photo);
                 $this->session->set_flashdata('msg','success');
@@ -72,7 +73,7 @@ class Testimonial extends CI_Controller{
 		}	
 	}
 
-	function update_testimonial()
+	function update_testi()
 	{
 		$config['upload_path'] = './theme/images/testimonial/'; // Path folder
 		$config['allowed_types'] = 'gif|jpg|png|bmp'; // extenstion yang di upload

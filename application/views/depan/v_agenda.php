@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-<?php $this->load->view('depan/v_css'); ?>    
+<?php $this->load->view('depan/layout/v_css'); ?>    
 </head>
 
 <body>
   <!--============================= HEADER =============================-->
 <?php 
-$this->load->view('depan/v_topbar');
+$this->load->view('depan/layout/v_topbar');
  ?>
   
     <!-- NAVBAR -->
 <?php 
-$this->load->view('depan/v_navbar');
+$this->load->view('depan/layout/v_navbar');
  ?>
 
     <section>
@@ -73,11 +73,11 @@ $this->load->view('depan/v_navbar');
 <!--//END EVENTS -->
 <!--============================= FOOTER =============================-->
     <?php 
-    $this->load->view('depan/v_footer');
+    $this->load->view('depan/layout/v_footer');
      ?>
         <!--//END FOOTER -->
         <!-- jQuery, Bootstrap JS. -->
-        <?php $this->load->view('depan/v_js'); ?>
+        <?php $this->load->view('depan/layout/v_js'); ?>
     </body>
 
     </html>

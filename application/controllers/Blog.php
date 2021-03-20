@@ -63,6 +63,7 @@ class Blog extends CI_Controller{
 			$x['author']=$row['tulisan_author'];
 			$x['kategori']=$row['tulisan_kategori_nama'];
 			$x['slug']=$row['tulisan_slug'];
+			$x['tulisan']=$row['tulisan_views'];
 			$x['show_komentar']=$this->m_tulisan->show_komentar_by_tulisan_id($kode);
 			$x['category']=$this->db->get('tbl_kategori');
 			$x['populer']=$this->db->query("SELECT * FROM tbl_tulisan ORDER BY tulisan_views DESC LIMIT 5");

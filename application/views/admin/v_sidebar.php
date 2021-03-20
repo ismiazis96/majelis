@@ -97,13 +97,13 @@
         <li class="treeview active">
           <a href="#">
             <i class="fa fa-user"></i>
-            <span>Kesiswaan</span>
+            <span>Anggota</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url().'admin/siswa'?>"><i class="fa fa-users"></i> Data Siswa</a></li>
+            <li class="active"><a href="<?php echo base_url().'admin/siswa'?>"><i class="fa fa-users"></i> Data Anggota</a></li>
             <!-- <li><a href="#"><i class="fa fa-star-o"></i> Prestasi Siswa</a></li> -->
           </ul>
         </li>
@@ -136,7 +136,7 @@
         </li>
 
          <li>
-          <a href="<?php echo base_url().'administrator/logout'?>">
+          <a href="<?php echo base_url().'admin/login/logout'?>">
             <i class="fa fa-sign-out"></i> <span>Sign Out</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
@@ -219,13 +219,13 @@
         <li class="treeview active">
           <a href="#">
             <i class="fa fa-user"></i>
-            <span>Kesiswaan</span>
+            <span>Anggota</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url().'admin/siswa'?>"><i class="fa fa-users"></i> Data Siswa</a></li>
+            <li class="active"><a href="<?php echo base_url().'admin/siswa'?>"><i class="fa fa-users"></i> Data Anggota</a></li>
           </ul>
         </li>
 
@@ -248,7 +248,7 @@
         </li>
 
          <li>
-          <a href="<?php echo base_url().'administrator/logout'?>">
+          <a href="<?php echo base_url().'admin/login/logout'?>">
             <i class="fa fa-sign-out"></i> <span>Sign Out</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
@@ -311,7 +311,7 @@
         </li>
 
          <li>
-          <a href="<?php echo base_url().'administrator/logout'?>">
+          <a href="<?php echo base_url().'admin/login/logout'?>">
             <i class="fa fa-sign-out"></i> <span>Sign Out</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
