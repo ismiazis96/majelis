@@ -39,5 +39,59 @@ class M_agenda extends CI_Model{
 		return $hsl;
 	}
 
+	//     function saveData($post,$user_id,$user_nama)
+ //    {
+ //    	$date = date('Y-m-d h:i:s');
+ //        $data = array(
+ //            'agenda_nama'           => $post['xnama_agenda'],
+ //            'agenda_tanggal'		=> $date,
+ //            'agenda_deskripsi'		=> $post['xdeskripsi'],
+ //            'agenda_mulai'  		=> $post['xmulai'],
+ //            'agenda_selesai'       	=> $post['xselesai'],
+ //            'agenda_tempat'         => $post['xtempat'],
+ //            'agenda_waktu'          => $post['xwaktu'],
+ //            'agenda_keterangan'     => $post['xdeskripsi'],
+ //            'agenda_author'			=> $user_nama,
+ //            'agenda_pengguna_id'	=> $user_id
+ //        );
+
+ //        $this->db->insert('tbl_agenda', $data);
+ //    }
+
+ //    function getDataEdit($id)
+ //    {
+ //        $this->db->select();
+ //        $this->db->from('tbl_agenda');
+ //        $this->db->where('agenda_id', $id);
+ //        $query = $this->db->get();
+ //        return $query;
+ //    }
+
+ //    function updateData($post,$user_id,$user_nama)
+ //    {
+
+ //    	$date = date('Y-m-d h:i:s');
+ //        $data = array(
+ //            'agenda_nama'           => $post['xnama_agenda'],
+ //            'agenda_tanggal'		=> $date,
+ //            'agenda_deskripsi'		=> $post['xdeskripsi'],
+ //            'agenda_mulai'  		=> $post['xmulai'],
+ //            'agenda_selesai'       	=> $post['xselesai'],
+ //            'agenda_tempat'         => $post['xtempat'],
+ //            'agenda_waktu'          => $post['xwaktu'],
+ //            'agenda_keterangan'     => $post['xketerangan'],
+ //            'agenda_author'			=> $user_nama,
+ //            'agenda_pengguna_id'	=> $user_id
+ //        );
+
+ //        $this->db->where('agenda_id', $post['xid_agenda']);
+ //        $this->db->update('tbl_agenda', $data);
+ //    }
+
+ //    function delete($agenda_id){
+	// 	$hsl=$this->db->query("DELETE FROM tbl_agenda WHERE agenda_id='$agenda_id'");
+	// 	return $hsl;
+	// }
+
 
 } 

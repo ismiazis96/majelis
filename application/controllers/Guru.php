@@ -7,7 +7,7 @@ class Guru extends CI_Controller{
 		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-		$x['title'] = "Guru";
+		$x['title'] = "Majelis Ta'lim Babussalam | Guru";
 		$x['heading'] = "Guru Kami";
 		$jum=$this->m_guru->guru();
         $page=$this->uri->segment(3);

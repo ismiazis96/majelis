@@ -32,11 +32,16 @@
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">About</a></li>>
+        <li class="active">Data Tentang</li>
       </ol>
     </section>
 
     <!-- Main content -->
-                <div id="main-wrapper">
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+                            <div id="main-wrapper">
                     <div class="row">
                         <form class="form-horizontal" action="<?php echo base_url().'admin/about/update'?>" method="post" enctype="multipart/form-data">
                         <div class="col-md-12">
@@ -74,6 +79,11 @@
                         </form>
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- /.content -->
   </div>

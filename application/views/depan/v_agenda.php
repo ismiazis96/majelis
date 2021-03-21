@@ -46,7 +46,7 @@ $this->load->view('depan/layout/v_navbar');
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="event-date">
-                                    <h4><?php echo date("d", strtotime($row->agenda_tanggal));?></h4> <span><?php echo date("M Y", strtotime($row->agenda_tanggal));?></span>
+                                    <h4><?php echo date("d", strtotime($row->agenda_mulai));?></h4> <span><?php echo date("M Y", strtotime($row->agenda_mulai));?></span>
                                 </div>
                                 <span class="event-time"><?php echo $row->agenda_waktu;?></span>
                             </div>

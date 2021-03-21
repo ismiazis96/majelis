@@ -7,7 +7,7 @@ class Siswa extends CI_Controller{
 		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-		$x['title'] ="Anggota";
+		$x['title'] ="Majelis Ta'lim Babussalam | Anggota";
 		$x['heading'] = "Data Anggota";
 		$jum=$this->m_siswa->siswa();
         $page=$this->uri->segment(3);

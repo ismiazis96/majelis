@@ -8,7 +8,7 @@ class Galeri extends CI_Controller{
 		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-		$x['title'] = "Gallery Photo";
+		$x['title'] = "Majelis Ta'lim Babussalam | Gallery Photo";
 		$x['heading'] = "Gallery Photo";
 		$x['alb']=$this->m_album->get_all_album();
 		$x['all_galeri']=$this->m_galeri->get_all_galeri();

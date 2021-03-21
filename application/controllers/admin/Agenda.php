@@ -18,6 +18,40 @@ class Agenda extends CI_Controller{
 		$this->load->view('admin/v_agenda',$x);
 	}
 
+	 //  function simpan_agenda()
+  //   {
+  //       $post = $this->input->post();
+  //      	$kode=$this->session->userdata('idadmin');
+		// $user=$this->m_pengguna->get_pengguna_login($kode);
+		// $p=$user->row_array();
+		// $user_id=$p['pengguna_id'];
+		// $user_nama=$p['pengguna_nama'];
+  //       $this->m_agenda->saveData($post,$user_id,$user_nama); // cek bagian model m_pks
+		// echo $this->session->set_flashdata('msg','success');
+  //       redirect('admin/agenda');
+  //   }
+
+  //    function getDataEdit()
+  //   {
+  //       $id    = $this->input->post('agenda_id'); // diambil berdasarkan kode_pks
+  //       $data = $this->m_agenda->getDataEdit($id)->row_array();
+  //       header('Content-Type: application/json');
+  //       echo json_encode($data);
+  //   }
+
+  //    function update_agenda()
+  //   {
+  //       $post = $this->input->post();
+  //       $kode=$this->session->userdata('idadmin');
+		// $user=$this->m_pengguna->get_pengguna_login($kode);
+		// $p=$user->row_array();
+		// $user_id=$p['pengguna_id'];
+		// $user_nama=$p['pengguna_nama'];
+  //       $this->m_agenda->updateData($post,$user_id,$user_nama);
+  //       echo $this->session->set_flashdata('msg','info');
+  //       redirect('admin/agenda');
+  //   }
+
 	function simpan_agenda(){
 		$nama_agenda=strip_tags($this->input->post('xnama_agenda'));
 		$deskripsi=$this->input->post('xdeskripsi');
@@ -54,11 +88,21 @@ class Agenda extends CI_Controller{
 		echo $this->session->set_flashdata('msg','info');
 		redirect('admin/agenda');
 	}
+	
 	function hapus_agenda(){
 		$kode=strip_tags($this->input->post('kode'));
 		$this->m_agenda->hapus_agenda($kode);
 		echo $this->session->set_flashdata('msg','success-hapus');
 		redirect('admin/agenda');
 	}
+
+  // function hapus_agenda($agenda_id)
+  //   {
+  //   	 // var_dump($agenda_id);die;
+  //        $this->m_agenda->delete($agenda_id);
+  //        echo $this->session->set_flashdata('msg','success-hapus');
+  //        redirect('admin/agenda');
+            
+  //   } 
 
 }

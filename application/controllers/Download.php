@@ -8,7 +8,7 @@ class Download extends CI_Controller{
 		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-		$x['title'] = "Download";
+		$x['title'] = "Majelis Ta'lim Babussalam | Download";
 		$x['heading'] = "Download";
 		$x['data']=$this->m_files->get_all_files();
 		$this->load->view('depan/v_download',$x);

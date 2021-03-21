@@ -7,7 +7,7 @@ class About extends CI_Controller{
 		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-		$x['title'] = "About";
+		$x['title'] = "Majelis Ta'lim Babussalam | About";
 		$x['heading'] = "Tentang Kami";
 		$about = $this->db->get('tbl_about', 1)->row();
 		$x['testimonial']=$this->m_testimonial->get_testimonial();

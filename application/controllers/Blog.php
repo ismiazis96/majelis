@@ -7,7 +7,7 @@ class Blog extends CI_Controller{
 		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-		$x['title'] = "Blog";
+		$x['title'] = "Majelis Ta'lim Babussalam | Blog";
 		$jum=$this->m_tulisan->berita();
         $page=$this->uri->segment(3);
         if(!$page):

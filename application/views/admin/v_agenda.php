@@ -19,13 +19,9 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-   <?php
-    $this->load->view('admin/v_header');
-  ?>
+   <?phP $this->load->view('admin/v_header'); ?>
   <!-- Left side column. contains the logo and sidebar -->
-  <?php 
-    $this->load->view('admin/v_sidebar');
-  ?>
+  <?php $this->load->view('admin/v_sidebar'); ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -55,19 +51,6 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <div class="flash-data" data-flashdata="<?= $this->session->flashdata('msg'); ?>"></div>
-    <?php if ($this->session->flashdata('msg')) : ?>
-    <!-- <div class="row mt-3">
-        <div class="col-md-6">
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Data mahasiswa <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
-    </div> -->
-    <?php endif; ?>
               <table id="example1" class="table table-striped" style="font-size:12px;">
                 <thead>
                 <tr>
@@ -130,11 +113,7 @@
   <!-- /.content-wrapper -->
   <?php
     $this->load->view('admin/v_footer');
-  ?>
-
-  <!-- /.control-sidebar -->
-  <div class="control-sidebar-bg"></div>
-</div>  
+  ?> 
 
 
 <!--Modal Add Pengguna-->
@@ -319,14 +298,6 @@
 	<?php foreach ($data->result_array() as $i) :
               $agenda_id=$i['agenda_id'];
               $agenda_nama=$i['agenda_nama'];
-              $agenda_deskripsi=$i['agenda_deskripsi'];
-              $agenda_mulai=$i['agenda_mulai'];
-              $agenda_selesai=$i['agenda_selesai'];
-              $agenda_tempat=$i['agenda_tempat'];
-              $agenda_waktu=$i['agenda_waktu'];
-              $agenda_keterangan=$i['agenda_keterangan'];
-              $agenda_author=$i['agenda_author'];
-              $tangal=$i['tanggal'];
             ?>
 	<!--Modal Hapus Pengguna-->
         <div class="modal fade" id="ModalHapus<?php echo $agenda_id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -352,9 +323,6 @@
         </div>
 	<?php endforeach;?>
 
-
-
-
 <!-- jQuery 2.2.3 -->
 <script src="<?php echo base_url().'assets/plugins/jQuery/jquery-2.2.3.min.js'?>"></script>
 <!-- Bootstrap 3.3.6 -->
@@ -374,7 +342,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url().'assets/dist/js/demo.js'?>"></script>
 <script src="<?php echo base_url().'theme/js/sweetalert2.all.min.js' ?>"></script>
-<!-- <script type="text/javascript" src="<?php echo base_url().'assets/plugins/toast/jquery.toast.min.js'?>"></script> -->
+<script type="text/javascript" src="<?php echo base_url().'assets/plugins/toast/jquery.toast.min.js'?>"></script>
 <!-- page script -->
 <script>
   $(function () {
@@ -410,7 +378,7 @@
 
   });
 </script>
-<!-- <?php if($this->session->flashdata('msg')=='error'):?>
+<?php if($this->session->flashdata('msg')=='error'):?>
         <script type="text/javascript">
                 $.toast({
                     heading: 'Error',
@@ -461,6 +429,6 @@
         </script>
     <?php else:?>
 
-    <?php endif;?> -->
+    <?php endif;?>
 </body>
 </html>

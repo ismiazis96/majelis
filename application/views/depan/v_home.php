@@ -136,8 +136,8 @@
                       <?php foreach ($agenda->result() as $row):?>
                         <div class="event_date">
                             <div class="event-date-wrap">
-                                <p><?php echo date("d", strtotime($row->agenda_tanggal));?></p>
-                                <span><?php echo date("M. y", strtotime($row->agenda_tanggal));?></span>
+                                <p><?php echo date("d", strtotime($row->agenda_mulai));?></p>
+                                <span><?php echo date("M. y", strtotime($row->agenda_mulai));?></span>
                             </div>
                         </div>
                         <div class="date-description">

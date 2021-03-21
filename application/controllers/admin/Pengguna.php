@@ -189,7 +189,7 @@ class Pengguna extends CI_Controller{
             $a=$get->row_array();
             $b=$a['pengguna_username'];
         }
-        $pass=rand(123456,999999);
+        $pass='password12';
         $this->m_pengguna->resetpass($id,$pass);
         echo $this->session->set_flashdata('msg','show-modal');
         echo $this->session->set_flashdata('uname',$b);

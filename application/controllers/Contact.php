@@ -7,7 +7,7 @@ class Contact extends CI_Controller{
   		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-      $x['title'] = "Contact";
+      $x['title'] = "Majelis Ta'lim Babussalam | Contact";
 		  $this->load->view('depan/v_contact', $x);
 	}
 

@@ -7,8 +7,8 @@ class Pengumuman extends CI_Controller{
 		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-		$x['title'] = "Pengumuman";
-		$x['title'] = "Pengumuman";
+		$x['title'] = "Majelis Ta'lim Babussalam | Pengumuman";
+		// $x['title'] = "Pengumuman";
 		$jum=$this->m_pengumuman->pengumuman();
         $page=$this->uri->segment(3);
         if(!$page):

@@ -7,7 +7,7 @@ class Agenda extends CI_Controller{
 		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-		$x['title'] = "Agenda";
+		$x['title'] = "Majelis Ta'lim Babussalam | Agenda";
         $x['heading'] = "Agenda";
 		$jum=$this->m_agenda->agenda();
         $page=$this->uri->segment(3);
