@@ -26,7 +26,6 @@
     $this->load->view('admin/v_sidebar');
   ?>
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -50,7 +49,7 @@
           <h3 class="box-title">Post Berita</h3>
         </div>
 
-		<form action="<?php echo base_url().'admin/tulisan/simpan_tulisan'?>" method="post" enctype="multipart/form-data">
+    <form action="<?php echo base_url().'admin/tulisan/simpan_tulisan'?>" method="post" enctype="multipart/form-data">
 
         <!-- /.box-header -->
         <div class="box-body">
@@ -71,7 +70,7 @@
         <!-- /.box-body -->
 
       </div>
-	  </div>
+    </div>
       <!-- /.box -->
 
       <div class="row">
@@ -83,7 +82,7 @@
             </div>
             <div class="box-body">
 
-			<textarea id="ckeditor" name="xisi" required></textarea>
+      <textarea id="ckeditor" name="xisi" required></textarea>
 
             </div>
             <!-- /.box-body -->
@@ -103,36 +102,47 @@
                 <label>Kategori</label>
                 <select class="form-control select2" name="xkategori" style="width: 100%;" required>
                   <option value="">-Pilih-</option>
-				  <?php
-					$no=0;
-					foreach ($kat->result_array() as $i) :
-					   $no++;
+          <?php
+          $no=0;
+          foreach ($kat->result_array() as $i) :
+             $no++;
                        $kategori_id=$i['kategori_id'];
                        $kategori_nama=$i['kategori_nama'];
 
                     ?>
                   <option value="<?php echo $kategori_id;?>"><?php echo $kategori_nama;?></option>
-				  <?php endforeach;?>
+          <?php endforeach;?>
                 </select>
               </div>
 
-			  <div class="form-group">
+              <div class="form-group">
                 <label>Gambar</label>
                 <input type="file" name="filefoto" style="width: 100%;" required>
               </div>
+
+            <label>Tags</label>
+              <div style="overflow-y:scroll;height:150px;margin-bottom:30px;">
+                  <?php foreach ($tag->result() as $row) : ?>
+                  <div class="form-group">
+                      <label>
+                          <input type="checkbox" name="tag[]" value="<?php echo $row->tag_name;?>"> <?php echo $row->tag_name;?>
+                      </label>
+                  </div>
+                  <?php endforeach;?>
+              </div>
               <!-- /.form group -->
-			 <div class="form-group">
-              <!--<label>
+<!--        <div class="form-group">
+              <label>
                   <input type="checkbox" class="minimal" name="ximgslider" value="1">
                    Tampilkan pada Image Slider
                 </label>
-              </div>-->
+       </div> -->
 
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-		</form>
+    </form>
 
           <!-- /.box -->
         </div>

@@ -128,6 +128,22 @@
 			 <div class="form-group">
 
               </div>
+              <label>Tags</label>
+              <div style="overflow-y:scroll;height:150px;margin-bottom:30px;">
+              <?php 
+                  $post_tag=$b['tulisan_tags'];
+                  $strtag=explode(",", $post_tag);
+                  for($j = 0; $j < count($strtag); $j++){
+
+                  }
+                  foreach ($tag->result() as $row) : ?>
+                  <div class="form-group">
+                      <label>
+                          <input type="checkbox" name="tag[]" value="<?php echo $row->tag_name;?>" <?php if(in_array($row->tag_name, $strtag)) echo 'checked="checked"';?> > <?php echo $row->tag_name;?>
+                      </label>
+                  </div>
+              <?php endforeach;?>
+              </div>
 
             </div>
             <!-- /.box-body -->

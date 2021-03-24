@@ -33,9 +33,9 @@
                         shares: [
                         { share: "twitter", label: "Twitter" },
                         { share: "facebook", label: "Facebook" },
-                        { share: "googleplus", label: "Google+" },
+                        // { share: "googleplus", label: "Google+" },
                         { share: "linkedin", label: "Linked In" },
-                  { share: "pinterest", label: "Pinterest" }
+                  { share: "whatsapp", label: "WhatsApp" }
                         ]
                 });
           });

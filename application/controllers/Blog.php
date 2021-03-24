@@ -63,6 +63,7 @@ class Blog extends CI_Controller{
 			$x['author']=$row['tulisan_author'];
 			$x['kategori']=$row['tulisan_kategori_nama'];
 			$x['slug']=$row['tulisan_slug'];
+			$x['tags']=$row['tulisan_tags'];
 			$x['tulisan']=$row['tulisan_views'];
 			$x['show_komentar']=$this->m_tulisan->show_komentar_by_tulisan_id($kode);
 			$x['category']=$this->db->get('tbl_kategori');

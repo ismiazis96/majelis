@@ -58,7 +58,7 @@
                     <th>Jenis Kelamin</th>
                     <th>Level</th>
                     <th>Status</th>
-                    <th>AKsi Akun</th>
+                    <th style="text-align: center;">Aksi status</th>
                     <th style="text-align:center;">Aksi</th>
                 </tr>
                 </thead>
@@ -90,10 +90,16 @@
                   <?php else:?>
                         <td>Author</td>
                   <?php endif;?>
-                  <td><?php echo $pengguna_status; ?></td>
-                  <td>
-                    <a class="btn" href="#modalHapusUser<?php echo $pengguna_id ?>" data-toggle="modal" title="Non aktif"><span class="fa fa-close"></span> Non Aktif</a>
-                    <a class="btn" href="#modalaktifUser<?php echo $pengguna_id ?>" data-toggle="modal" title="aktif"><span class="fa fa-thumbs-up"></span> Aktif</a>
+
+                  <?php if($pengguna_status=='1'): ?>
+                        <td>Aktif</td>
+                  <?php else: ?>
+                        <td>Non Aktif</td>
+                  <?php endif; ?>            
+                  <!-- <td><?php echo $pengguna_status; ?></td> -->
+                  <td style="text-align:right;">
+                    <a class="btn" href="#modalHapusUser<?php echo $pengguna_id ?>" data-toggle="modal" title="Non aktif"><span class="fa fa-close"></span></a>
+                    <a class="btn" href="#modalaktifUser<?php echo $pengguna_id ?>" data-toggle="modal" title="aktif"><span class="fa fa-thumbs-up"></span></a>
                   </td>
                   <td style="text-align:right;">
                         <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $pengguna_id;?>"><span class="fa fa-pencil"></span></a>

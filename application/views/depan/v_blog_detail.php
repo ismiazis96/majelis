@@ -50,6 +50,15 @@
 
                 <div class="blog-tiltle_block">
 
+                <div class="float-left font-face1 post-meta-holder nomargin">TAGS &mdash; 
+                      <?php 
+                          $split_tag=explode(",", $tags);
+                          foreach ($split_tag as $tag) : 
+                      ?>
+                      <a href="#"><?php echo $tag;?></a> &vert;
+                      <?php endforeach;?>
+                </div>
+
                     <div class="blog-icons">
                         <div class="blog-share_block">
                           <div class="pull-left"><h5>Bagikan Ke:</h5></div>
@@ -57,6 +66,7 @@
                         </div>
                     </div>
                     <!-- Nav tabs -->
+
                     <ul class="nav nav-tabs blogpost-tab-wrap" role="tablist">
                         <li class="nav-item blogpost-nav-tab">
                             <a class="nav-link active" data-toggle="tab" href="#comments" role="tab">Komentar</a>

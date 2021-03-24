@@ -7,6 +7,7 @@ class Tulisan extends CI_Controller{
             redirect($url);
         };
 		$this->load->model('m_kategori');
+		$this->load->model('m_tag');
 		$this->load->model('m_tulisan');
 		$this->load->model('m_pengguna');
 		$this->load->library('upload');
@@ -20,6 +21,7 @@ class Tulisan extends CI_Controller{
 	}
 	function add_tulisan(){
 		$x['title'] = 'Majelis | Tambah Tulisan ';
+		$x['tag']=$this->m_tag->get_all_tag();
 		$x['kat']=$this->m_kategori->get_all_kategori();
 		$this->load->view('admin/v_add_tulisan',$x);
 	}
@@ -27,6 +29,7 @@ class Tulisan extends CI_Controller{
 		$x['title'] = 'Majelis | Update Tulisan';
 		$kode=$this->uri->segment(4);
 		$x['data']=$this->m_tulisan->get_tulisan_by_kode($kode);
+		$x['tag']=$this->m_tag->get_all_tag();
 		$x['kat']=$this->m_kategori->get_all_kategori();
 		$this->load->view('admin/v_edit_tulisan',$x);
 	}
@@ -70,7 +73,12 @@ class Tulisan extends CI_Controller{
 													$p=$user->row_array();
 													$user_id=$p['pengguna_id'];
 													$user_nama=$p['pengguna_nama'];
-													$this->m_tulisan->simpan_tulisan($judul,$isi,$kategori_id,$kategori_nama,$imgslider,$user_id,$user_nama,$gambar,$slug);
+
+													$xtags[]=$this->input->post('tag');
+													foreach($xtags as $tag){
+														$tags = @implode(",", $tag);
+													}
+													$this->m_tulisan->simpan_tulisan($judul,$isi,$kategori_id,$kategori_nama,$imgslider,$user_id,$user_nama,$gambar,$slug,$tags);
 													echo $this->session->set_flashdata('msg','success');
 													redirect('admin/tulisan');
 											}else{
@@ -126,7 +134,12 @@ class Tulisan extends CI_Controller{
 													$p=$user->row_array();
 													$user_id=$p['pengguna_id'];
 													$user_nama=$p['pengguna_nama'];
-													$this->m_tulisan->update_tulisan($tulisan_id,$judul,$isi,$kategori_id,$kategori_nama,$imgslider,$user_id,$user_nama,$gambar,$slug);
+
+													$xtags[]=$this->input->post('tag');
+														foreach($xtags as $tag){
+															$tags = @implode(",", $tag);
+														}
+													$this->m_tulisan->update_tulisan($tulisan_id,$judul,$isi,$kategori_id,$kategori_nama,$imgslider,$user_id,$user_nama,$gambar,$slug,$tags);
 													echo $this->session->set_flashdata('msg','info');
 													redirect('admin/tulisan');
 
@@ -153,7 +166,11 @@ class Tulisan extends CI_Controller{
 									$p=$user->row_array();
 									$user_id=$p['pengguna_id'];
 									$user_nama=$p['pengguna_nama'];
-									$this->m_tulisan->update_tulisan_tanpa_img($tulisan_id,$judul,$isi,$kategori_id,$kategori_nama,$imgslider,$user_id,$user_nama,$slug);
+									$xtags[]=$this->input->post('tag');
+										foreach($xtags as $tag){
+											$tags = @implode(",", $tag);
+										}
+									$this->m_tulisan->update_tulisan_tanpa_img($tulisan_id,$judul,$isi,$kategori_id,$kategori_nama,$imgslider,$user_id,$user_nama,$slug,$tags);
 									echo $this->session->set_flashdata('msg','info');
 									redirect('admin/tulisan');
 	            }
