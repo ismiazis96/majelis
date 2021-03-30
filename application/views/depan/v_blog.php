@@ -9,6 +9,7 @@
             return implode(" ",array_splice($words,0,$word_limit));
         }
     ?>
+
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                     <div class="blog-img_block">
                         <img src="<?php echo base_url().'assets/images/'.$row->tulisan_gambar;?>" class="img-fluid" alt="blog-img" div data-aos="fade-up"data-aos-duration="2000">
                         <div class="blog-date">
-                            <span><?php echo $row->tanggal;?></span>
+                            <span><?php echo date('d M Y',strtotime($row->tanggal));?></span>
                         </div>
                     </div>
                     <div class="blog-tiltle_block">
@@ -81,6 +82,7 @@
         </div>
     </div>
 </section>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <!--//END BLOG -->
 <!--============================= FOOTER =============================-->
 <!-- FOOTER -->

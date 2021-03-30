@@ -35,22 +35,20 @@
 <section class="blog-wrap">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <div class="blog-img_block">
+            <div class="col-md-12">
+                <div class="blog-img_block center">
                     <img src="<?php echo base_url().'assets/images/'.$image?>" class="img-fluid" alt="blog-img">
                     <div class="blog-date">
-                        <span><?php echo $tanggal;?></span>
+                        <span><?php echo date('d M Y',strtotime($tanggal));?></span>
                     </div>
                 </div>
                 <div class="blog-tiltle_block">
                     <h4><a href="<?php echo site_url('artikel/'.$slug);?>"><?php echo $title;?></a></h4>
-                    <h6> <a href="#"><i class="fa fa-user" aria-hidden="true"></i><span><?php echo $author;?></span> </a>  |   <a href="#"><i class="fa fa-tags" aria-hidden="true"></i><span><?php echo $kategori;?></span></a>  |  <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><span><?php echo $tulisan;?> Kali dibaca</span> </a></h6>
+                    <h6> <a href="#"><i class="fa fa-user" aria-hidden="true"></i><span><?php echo $author;?></span> </a>  |   <a href="#"><i class="fa fa-tags" aria-hidden="true"></i><span><?php echo $kategori;?></span></a>  |  <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><span><?php echo number_format($tulisan);?> Views</span> </a></h6>
                     <?php echo $blog;?>
                 </div>
 
-                <div class="blog-tiltle_block">
-
-                <div class="float-left font-face1 post-meta-holder nomargin">TAGS &mdash; 
+                <div class="blog-tiltle_block">TAGS &mdash; 
                       <?php 
                           $split_tag=explode(",", $tags);
                           foreach ($split_tag as $tag) : 
@@ -175,7 +173,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
               <form action="<?php echo site_url('blog/search');?>" method="get">
                   <input type="text" name="keyword" placeholder="Search" class="blog-search" required>
                   <button type="submit" class="btn btn-warning btn-blogsearch">SEARCH</button>
@@ -200,7 +198,7 @@
                   <?php endforeach;?>
                 </div>
 
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

@@ -46,8 +46,27 @@ class M_tulisan extends CI_Model{
 		return $hsl;
 	}
 
+	// function berita_perpage($offset,$limit){
+	// 	$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_tulisan WHERE tulisan_status='1' ORDER BY tulisan_id DESC limit $offset,$limit");
+	// 	return $hsl;
+	// }
+
+	
+
+	function berita(){
+		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_tulisan ORDER BY tulisan_id DESC");
+		return $hsl;
+	}
+
+	// function berita()
+	// {
+	// 	$hsl = $this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal, '%d/%m/%y') AS tanggal FROM tbl_tulisan WHERE tulisan_status ='1' ORDER BY tulisan_id DESC ");
+	// 	return $hsl;
+	// }
+
+
 	function berita_perpage($offset,$limit){
-		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_tulisan WHERE tulisan_status='1' ORDER BY tulisan_id DESC limit $offset,$limit");
+		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_tulisan WHERE tulisan_status ='1' ORDER BY tulisan_id DESC limit $offset,$limit");
 		return $hsl;
 	}
 
@@ -56,11 +75,12 @@ class M_tulisan extends CI_Model{
 	// 	return $hsl;
 	// }
 
-	function berita()
-	{
-		$hsl = $this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal, '%d/%m/%y') AS tanggal FROM tbl_tulisan WHERE tulisan_status ='1' ORDER BY tulisan_id DESC ");
-		return $hsl;
-	}
+	// function berita_paging()
+	// {
+	// 	$hsl = $this->db->query("SELECT * FROM tbl_tulisan WHERE tulisan_status ='1' ");
+	// 	return $hsl;
+	// }
+
 	function get_berita_by_kode($kode){
 		$hsl=$this->db->query("SELECT tbl_tulisan.*,DATE_FORMAT(tulisan_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_tulisan where tulisan_id='$kode'");
 		return $hsl;

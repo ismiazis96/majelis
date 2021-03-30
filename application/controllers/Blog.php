@@ -6,8 +6,9 @@ class Blog extends CI_Controller{
 		$this->load->model('m_pengunjung');
 		$this->m_pengunjung->count_visitor();
 	}
+
 	function index(){
-		$x['title'] = "Majelis Ta'lim Babussalam | Blog";
+		$x['title'] = "Blog";
 		$jum=$this->m_tulisan->berita();
         $page=$this->uri->segment(3);
         if(!$page):
@@ -43,9 +44,10 @@ class Blog extends CI_Controller{
             $x['page'] =$this->pagination->create_links();
 						$x['data']=$this->m_tulisan->berita_perpage($offset,$limit);
 						$x['category']=$this->db->get('tbl_kategori');
-						$x['populer']=$this->db->query("SELECT * FROM tbl_tulisan ORDER BY tulisan_views DESC LIMIT 5");
+						$x['populer']=$this->db->query("SELECT * FROM tbl_tulisan WHERE tulisan_status = '1' ORDER BY tulisan_views  DESC LIMIT 5");
 						$this->load->view('depan/v_blog',$x);
 	}
+
 	function detail($slugs){
 		$slug=htmlspecialchars($slugs,ENT_QUOTES);
 		$query = $this->db->get_where('tbl_tulisan', array('tulisan_slug' => $slug));

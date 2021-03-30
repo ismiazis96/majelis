@@ -228,6 +228,7 @@
         </div>
     </div>
 </div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <!--//END DETAILED CHART -->
 <!--============================= FOOTER =============================-->
 <?php $this->load->view('depan/layout/v_footer'); ?>
