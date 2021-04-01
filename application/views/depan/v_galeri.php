@@ -6,10 +6,14 @@
 
 <body>
   <!--============================= HEADER =============================-->
-  <?php $this->load->view('depan/layout/v_topbar'); ?>
+ <?php 
+$this->load->view('depan/layout/v_topbar');
+ ?>
  
      <!-- NAVBAR -->
-<?php $this->load->view('depan/layout/v_navbar'); ?>
+<?php 
+$this->load->view('depan/layout/v_navbar');
+ ?>
     <section>
 </section>
 <!--//END HEADER -->
@@ -22,8 +26,26 @@
     <h3 class="gallery-style"><?php echo $heading; ?></h3>
   </div>
 </div><br>
-<div class="row">
-  <div class="col-md-12">
+
+    <div class="row">
+      <div class="col-md-4">
+          <div class="categorydiv">
+            <ul>
+              <li><a class="selected" href="#" style="font-size: 12px;">Semua</a></li>
+                <?php 
+                  foreach ($alb->result_array() as $i) {
+                           $alb_id=$i['album_id'];
+                           $alb_nama=$i['album_nama'];       
+                            ?>
+                            <li><a href="<?php echo base_url().'galeri/album/'.$alb_id;?>" style="font-size: 12px;"><?php echo $alb_nama;?></a></li>
+                  <?php } ?>    
+            </ul>
+          </div>
+        </div>
+    <!-- </div> --> 
+
+<!-- <div class="row"> -->
+  <div class="col-md-8">
     <div id="gallery">
       <div id="gallery-content">
         <div id="gallery-content-center">
@@ -43,7 +65,9 @@
 </div>
 <!--//End Gallery -->
 <!--============================= FOOTER =============================-->
-    <?php $this->load->view('depan/layout/v_footer'); ?>
+    <?php 
+    $this->load->view('depan/layout/v_footer');
+     ?>
     <!--//END FOOTER -->
     <!-- jQuery, Bootstrap JS. -->
     <?php $this->load->view('depan/layout/v_js'); ?>

@@ -161,6 +161,7 @@ body {
 #gallery-content{
 	float: left;
 	width: 100%;
+
 }
 .gallery-content-center-normal {
 	width: 950px;
@@ -179,6 +180,7 @@ body {
 	-o-transition: all 0.5s;
 	transition: all 0.5s;
 	margin-right: 10px;
+	
 }
 #gallery-content-center img:last-child {
 	margin: 0;

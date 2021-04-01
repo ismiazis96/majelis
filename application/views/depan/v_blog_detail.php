@@ -39,7 +39,7 @@
                 <div class="blog-img_block center">
                     <img src="<?php echo base_url().'assets/images/'.$image?>" class="img-fluid" alt="blog-img">
                     <div class="blog-date">
-                        <span><?php echo date('d M Y',strtotime($tanggal));?></span>
+                        <span><?php echo $tanggal;?></span>
                     </div>
                 </div>
                 <div class="blog-tiltle_block">

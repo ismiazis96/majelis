@@ -84,7 +84,7 @@ $this->load->view('depan/layout/v_navbar');
                         <img src="<?php echo base_url().'theme/images/chart-icon_2.png'?>" class="img-fluid" alt="chart_icon">
                     </div>
                     <div class="chart-text">
-                        <p><span class="counter"><?php echo $tot_siswa;?></span> Siswa
+                        <p><span class="counter"><?php echo $tot_siswa;?></span> Anggota
                         </p>
                     </div>
                 </div>

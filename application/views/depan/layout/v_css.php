@@ -33,3 +33,4 @@
     <link href="<?php echo base_url().'theme/css/jssocials.css'?>" rel="stylesheet">
     <link href="<?php echo base_url().'theme/css/jssocials-theme-flat.css'?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/scroll.css'?>">
+    <link href="<?php echo base_url().'theme/css/galeri.css'?>" rel="stylesheet" type="text/css" />
