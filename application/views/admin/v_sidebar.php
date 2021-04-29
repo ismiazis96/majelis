@@ -38,8 +38,8 @@
             <li><a href="<?php echo base_url().'admin/tag' ?>"><i class="fa fa-books">Tag</i></a></li>
           </ul>
         </li>
- 
-        <li class="<?php if($this->uri->uri_string() == 'admin/pengguna') { echo 'active'; } ?>">
+        <?php $aktif = $this->uri->uri_string() ?>
+        <li class="<?php if($aktif == 'admin/pengguna') { echo 'active'; } ?>">
           <a href="<?php echo base_url().'admin/pengguna'?>">
             <i class="fa fa-users"></i> <span>Pengguna</span>
             <span class="pull-right-container">
@@ -48,7 +48,7 @@
           </a>
         </li>
         
-        <li class="<?php if($this->uri->uri_string() == 'admin/agenda') { echo 'active'; } ?>">
+        <li class="<?php if($aktif == 'admin/agenda') { echo 'active'; } ?>">
           <a href="<?php echo base_url().'admin/agenda'?>">
             <i class="fa fa-calendar"></i> <span>Agenda</span>
             <span class="pull-right-container">
@@ -57,7 +57,7 @@
           </a>
         </li>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/pengumuman') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/pengumuman') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/pengumuman'?>">
             <i class="fa fa-volume-up"></i> <span>Pengumuman</span>
             <span class="pull-right-container">
@@ -66,7 +66,7 @@
           </a>
         </li>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/files') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/files') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/files'?>">
             <i class="fa fa-download"></i> <span>Download</span>
             <span class="pull-right-container">
@@ -88,7 +88,7 @@
           </ul>
         </li>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/guru') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/guru') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/guru'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Guru</span>
             <span class="pull-right-container">
@@ -111,7 +111,7 @@
           </ul>
         </li>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/inbox') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/inbox') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/inbox'?>">
             <i class="fa fa-envelope"></i> <span>Inbox</span>
             <span class="pull-right-container">
@@ -120,7 +120,7 @@
           </a>
         </li>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/komentar') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/komentar') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/komentar'?>">
             <i class="fa fa-comments"></i> <span>Komentar</span>
             <span class="pull-right-container">
@@ -129,12 +129,9 @@
           </a>
         </li>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/testimonial') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/testimonial') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/testimonial'?>">
             <i class="fa fa-thumb-tack"></i> <span>Testimonial</span>
-            <!-- <span class="pull-right-container">
-              <small class="label pull-right bg-green"><?php echo $jum_comment;?></small>
-            </span> -->
           </a>
         </li>
 
@@ -149,7 +146,8 @@
         <!-- Akses Untuk Admin -->
         <?php elseif($this->session->userdata('akses') == '2'): ?>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/dashboard') { echo 'active';}?>">
+        <?php $aktif = $this->uri->uri_string() ?>
+        <li class="<?php if($aktif == 'admin/dashboard') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/dashboard'?>">
             <i class="fa fa-home"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -173,7 +171,7 @@
           </ul>
         </li>
  
-        <li class="<?php if($this->uri->uri_string() == 'admin/agenda') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/agenda') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/agenda'?>">
             <i class="fa fa-calendar"></i> <span>Agenda</span>
             <span class="pull-right-container">
@@ -182,7 +180,7 @@
           </a>
         </li>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/pengumuman') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/pengumuman') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/pengumuman'?>">
             <i class="fa fa-volume-up"></i> <span>Pengumuman</span>
             <span class="pull-right-container">
@@ -191,7 +189,7 @@
           </a>
         </li>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/files') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/files') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/files'?>">
             <i class="fa fa-download"></i> <span>Download</span>
             <span class="pull-right-container">
@@ -213,7 +211,7 @@
           </ul>
         </li>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/guru') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/guru') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/guru'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Guru</span>
             <span class="pull-right-container">
@@ -235,7 +233,7 @@
           </ul>
         </li>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/inbox') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/inbox') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/inbox'?>">
             <i class="fa fa-envelope"></i> <span>Inbox</span>
             <span class="pull-right-container">
@@ -244,7 +242,7 @@
           </a>
         </li>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/komentar') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/komentar') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/komentar'?>">
             <i class="fa fa-comments"></i> <span>Komentar</span>
             <span class="pull-right-container">
@@ -263,7 +261,8 @@
         </li>  
         <!-- Akses Untuk Author -->
         <?php else: ?>
-        <li class="<?php if($this->uri->uri_string() == 'admin/dashboard') { echo 'active';}?>">
+        <?php $aktif = $this->uri->uri_string() ?>
+        <li class="<?php if($aktif == 'admin/dashboard') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/dashboard'?>">
             <i class="fa fa-home"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -285,7 +284,7 @@
           </ul>
         </li>
         
-        <li class="<?php if($this->uri->uri_string() == 'admin/agenda') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/agenda') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/agenda'?>">
             <i class="fa fa-calendar"></i> <span>Agenda</span>
             <span class="pull-right-container">
@@ -294,7 +293,7 @@
           </a>
         </li>
 
-        <li class="<?php if($this->uri->uri_string() == 'admin/pengumuman') { echo 'active';}?>">
+        <li class="<?php if($aktif == 'admin/pengumuman') { echo 'active';}?>">
           <a href="<?php echo base_url().'admin/pengumuman'?>">
             <i class="fa fa-volume-up"></i> <span>Pengumuman</span>
             <span class="pull-right-container">

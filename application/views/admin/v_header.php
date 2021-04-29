@@ -68,14 +68,21 @@
           ?>
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <?php if(empty($c['pengguna_photo'])):?>
+              <img src="<?php echo base_url().'assets/images/blank.png';?>" class="user-image" alt="">
+              <?php else: ?>  
               <img src="<?php echo base_url().'assets/images/'.$c['pengguna_photo'];?>" class="user-image" alt="">
+              <?php endif; ?>
               <span class="hidden-xs"><?php echo $c['pengguna_nama'];?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url().'assets/images/'.$c['pengguna_photo'];?>" class="img-circle" alt="">
-
+                <?php if(empty($c['pengguna_photo'])):?>
+                <img src="<?php echo base_url().'assets/images/blank.png';?>" class="user-image" alt="">
+                <?php else: ?>  
+                <img src="<?php echo base_url().'assets/images/'.$c['pengguna_photo'];?>" class="user-image" alt="">
+                <?php endif; ?>
                 <p>
                   <?php echo $c['pengguna_nama'];?>
                   <?php if($c['pengguna_level']=='1'):?>

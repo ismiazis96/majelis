@@ -49,7 +49,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-striped" style="font-size:13px;">
+              <table id="example1" class="table table-striped display table" style="font-size:13px;">
                 <thead>
                 <tr>
 					          <th>Photo</th>
@@ -75,7 +75,13 @@
                        $pengguna_status=$i['pengguna_status'];
                     ?>
                 <tr>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/'.$pengguna_photo;?>"></td>
+                  <td>
+                    <?php if(empty($pengguna_photo)): ?>
+                    <img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/blank.png';?>">
+                  <?php else: ?>
+                    <img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/'.$pengguna_photo;?>">
+                  <?php endif; ?>
+                  </td>
                   <td><?php echo $pengguna_nama;?></td>
                   <td><?php echo $pengguna_email;?></td>
                   <?php if($pengguna_jenkel=='L'):?>
@@ -302,7 +308,7 @@
                                         <label for="inputUserName" class="col-sm-4 control-label">Level</label>
                                         <div class="col-sm-7">
                                             <select class="form-control" name="xlevel" required>
-											<?php if($pengguna_level=='1'):?>
+											                      <?php if($pengguna_level=='1'):?>
                                                 <option value="1" selected>Administrator</option>
                                                 <option value="2">Admin</option>
                                                 <option value="3">Author</option>
@@ -310,11 +316,11 @@
                                                 <option value="1">Administrator</option>
                                                 <option value="2" selected>Admin</option>
                                                 <option value="3">Author</option>
-											<?php else:?>
-												<option value="1">Administrator</option>
-                        <option value="2">Admin</option>
+											                      <?php else:?>
+                        												<option value="1">Administrator</option>
+                                                <option value="2">Admin</option>
                                                 <option value="3" selected>Author</option>
-											<?php endif;?>
+											                      <?php endif;?>
                                             </select>
                                         </div>
                                     </div>
