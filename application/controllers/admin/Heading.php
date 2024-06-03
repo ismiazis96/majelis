@@ -87,9 +87,9 @@ class Heading extends CI_Controller
 				$config['source_image'] = './theme/images/banner/' . $gbr['file_name'];
 				$config['create_thumb'] = FALSE;
 				$config['maintain_ratio'] = FALSE;
-				$config['quality'] = '60%';
-				$config['width'] = 300;
-				$config['height'] = 300;
+				$config['quality'] = '80%';
+				$config['width'] = 2000;
+				$config['height'] = 783;
 				$config['new_image'] = './theme/images/banner/' . $gbr['file_name'];
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
