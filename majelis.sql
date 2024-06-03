@@ -1,8 +1,9 @@
 /*
 SQLyog Enterprise - MySQL GUI v7.12 
-MySQL - 5.5.5-10.1.38-MariaDB : Database - db_school
+MySQL - 5.5.5-10.1.38-MariaDB : Database - majelis
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -11,9 +12,9 @@ MySQL - 5.5.5-10.1.38-MariaDB : Database - db_school
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`db_school` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`majelis` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `db_school`;
+USE `majelis`;
 
 /*Table structure for table `tbl_about` */
 

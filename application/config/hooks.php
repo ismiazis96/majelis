@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -9,5 +9,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | files.  Please see the user guide for info:
 |
 |	https://codeigniter.com/user_guide/general/hooks.html
+
 |
 */
+$hook['post_controller_constructor'][] = array(
+    'class'    => 'MyDBHook',
+    'function' => 'disableOnlyFullGroupBy',
+    'filename' => 'MyDBHook.php',
+    'filepath' => 'hooks'
+);
