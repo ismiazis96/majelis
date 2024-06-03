@@ -42,9 +42,9 @@
                         </p>
                         <ul class="footer-social-icons">
                             <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter fa-tw" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.instagram.com/babussalam.info/"><i class="fa fa-instagram fa-ig" aria-hidden="true"></i></a></li>
+                            <!-- <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li> -->
+                            <!-- <li><a href="#"><i class="fa fa-twitter fa-tw" aria-hidden="true"></i></a></li> -->
+                            <li><a href="https://www.instagram.com/babussalam.info15/"><i class="fa fa-instagram fa-ig" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                 </div>
